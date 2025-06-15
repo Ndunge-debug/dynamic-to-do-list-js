@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     loadTasks(); // Load tasks when the page loads
 
-    const addBtn = document.getElementById('add-btn');
+    const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
 
-    addBtn.addEventListener('click', () => {
+    addButton.addEventListener('click', () => {
         const taskText = taskInput.value.trim();
         if (taskText !== '') {
             addTask(taskText); // Add and save task
@@ -20,7 +20,7 @@ function loadTasks() {
 
 function addTask(taskText, save = true) {
     const taskList = document.getElementById('task-list');
-    
+
     const li = document.createElement('li');
     li.textContent = taskText;
 
@@ -48,6 +48,7 @@ function removeFromStorage(taskText) {
     storedTasks = storedTasks.filter(task => task !== taskText);
     localStorage.setItem('tasks', JSON.stringify(storedTasks));
 }
+
 
 
 
